@@ -33,15 +33,19 @@ const TabNavigator = () => (
         backgroundColor: '#FFFFFF',
         borderTopWidth: 1,
         borderTopColor: '#F1F5F9',
-        height: Platform.OS === 'ios' ? 85 : 70,
-        paddingBottom: Platform.OS === 'ios' ? 25 : 12,
+        height: 110, // Very tall bar to ensure visibility
+        paddingBottom: 50, // Massive bottom clearance
         paddingTop: 10,
-        elevation: 0,
-        shadowOpacity: 0,
+        elevation: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: -2 },
+        shadowOpacity: 0.05,
+        shadowRadius: 10,
       },
       tabBarLabelStyle: {
         fontFamily: FONTS.bold,
-        fontSize: 12,
+        fontSize: 12, // Restored to nice readable size
+        marginTop: -2,
       },
       tabBarIcon: ({ color, size }) => {
         if (route.name === 'Dashboard') return <LayoutDashboard size={size} color={color} />;
