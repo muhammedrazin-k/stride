@@ -46,8 +46,9 @@ const TabNavigator = () => (
       tabBarIcon: ({ color, size }) => {
         if (route.name === 'Dashboard') return <LayoutDashboard size={size} color={color} />;
         if (route.name === 'History') return <History size={size} color={color} />;
-        if (route.name['includes']('Tips')) return <Lightbulb size={size} color={color} />;
+        if (route.name.includes('Tips')) return <Lightbulb size={size} color={color} />;
         if (route.name === 'More') return <MoreHorizontal size={size} color={color} />;
+        return null;
       },
     })}
   >
